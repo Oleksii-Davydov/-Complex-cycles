@@ -8,44 +8,141 @@
 </head>
 <body>
 
-<div>1. Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….):</div>
-<div><script>
-    for (let count = 20; count <= 30; count += 0.5) {
-        result = count
-        console.log(result)
-        document.write(result)
-        document.write(" ")
-    }
-</script></div>
-<div>2. Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів:</div>
-<div><script>
-    let num = 0;
-    let j = 27
-    for (let i = 10; i <= 100; i+=10) {
-        num = i * j ;
-        document.write( i + "$"+"=" + num);
-        console.log(+num)
-        document.write("<br>")
-    }
-</script></div>
+<h4>1. Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….):</h4>
+<div>
+    <script>
+        let count = 0;
+        for (let count = 20; count <= 30; count += 0.5) {
+            result = count
+            console.log(result)
+            document.write(result)
+            document.write(" ")
+        }
+    </script>
+</div>
+<h4>2. Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів:</h4>
+<div>
+    <script>
+        let number = 0;
+        let dollar = 27;
+        for (let i = 10; i <= 100; i += 10) {
+            number = i * dollar;
+            document.write(i + "$" + "=" + number + ";");
+            console.log(number)
+            document.write("<br>")
+        }
+    </script>
+</div>
 
-<div>3. Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N:</div>
-<div><script>
+<h4>3. Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N(N=45):</h4>
+<div>
+    <script>
+        let numberN = 45
+        for (let i = 1; i <= 100; i += 1) {
+            result = i * i
+            if (result < numberN) {
+                document.write(result)
+                document.write(" ")
 
-</script></div>
+            }
+        }
 
-<div>4. Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N</div>
-<div><script>
+    </script>
+</div>
 
-</script></div>
+<h4>4. Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1,
+    які не мають інших дільників крім 1 і себе).</h4>
+<div>
+    <script>
 
-<div>5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь.
-    (Наприклад, числа 9, 81 можна отримати, а 13 - не можна):</div>
-<div><script>
+        function isPrimeNum(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            ;
+            return true;
+        }
 
-</script></div>
+        let num3 = 8;
+        if (num3 === 2) {
+            document.write("Число" + " " + num3 + " " + "є простим");
+        } else if (num3 === 3) {
+            document.write("Число" + " " + num3 + " " + "є простим");
+        } else if (num3 % 2 === 0 || num3 % 3 === 0) {
+            document.write("Число" + " " + num3 + " " + "НЕ є простим");
+        } else {
+            document.write("Число" + " " + num3 + " " + "є простим");
+
+        }
+
+    </script>
+</div>
 
 
-</script></div>
+<h4>4. Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1,
+    які не мають інших дільників крім 1 і себе).</h4>
+<div>
+    <script>
+        let numberD = 7
+        nextPrime:
+            for (let i = 2; i < numberD; i++) {
+
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) continue nextPrime;
+                }
+                         document.write(i + " "); // простое
+            }
+
+
+    </script>
+</div>
+
+<h4>4. Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1,
+    які не мають інших дільників крім 1 і себе).</h4>
+<div>
+    <script>
+
+        let numberU = 7
+        nextPrime:
+            for (let i = 2; i < numberU; i++) {
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) continue nextPrime;
+                   /// document.write(i + " "); // простое
+                }
+              //  document.write(i + " "); // простое
+                 if (numberU % i !== 0) {
+                   document.write("Число" + " " + numberU + " " + "є простим"+ ". ");
+                }
+                 else if(numberU % i === 0) {
+                     document.write("Число" + " " + numberU + " "+"НЕ"+ " " +
+                         " " + "є простим"+ " .");
+
+                 }
+            }
+
+
+
+    </script>
+</div>
+
+<h4>5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь.
+    (Наприклад, числа 9, 81 можна отримати, а 13 - не можна):
+</h4>
+<div>
+    <script>
+        let numberL = 70;
+        let numberP = 3;
+        while (numberP < numberL) {
+            numberP = numberP * 3
+        }
+        if (numberP === numberL) {
+            document.write(`Число ${numberL} можна одержати шляхом зведення числа 3 у деякий ступінь`)
+        } else {
+            document.write(`Число ${numberL} НЕ можна одержати шляхом зведення числа 3 у деякий ступінь`)
+        }
+    </script>
+</div>
 </body>
 </html>
